@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, inicial scale=1.0">
+  <link rel="stylesheet" href="estilo.css" />
+  <title>Formulario</title>
+</head>
+
+<body>
+  <header class="cabecalho">
+    <img src="Objetos/Imagens/logo-gama.png"
+      alt="logotipo da Gama Academy na cor lilas." />
+    <img src="Objetos/Imagens/logo-itau.png"
+      alt="logo do itau na cor azul e letra na cor amarela e com o fundo na cor laranja." />
+    <nav>
+      <h1>Formação Itaú Tech (4ª Edição) - PCDs</h1>
+    </nav>
+
+  </header>
+
+  <main class="container">
+    <form>
+      <h1 id="titulo">Faça seu cadastro!</h1>
+      <p>* campos obrigatórios</p></br>
+      <section class="linha1">
+        <div class="campo">
+          <label for="nome" class="required">Nome</label>
+          <input type="text" name="nome" id="nome" placeholder="Informe seu nome completo" required>
+        </div>
+
+        <div class="campo">
+          <label for="cpf" class="required">CPF</label>
+          <input type="text" name="cpf" id="cpf" placeholder="Apenas números" maxlength="11"
+            onblur="validacao(cpf.value)" required>
+        </div>
+      </section>
+
+      <section class="linha2">
+        <div class="campo">
+          <label for="rg">RG</label>
+          <input type="text" name="rg" id="rg" placeholder="Apenas números">
+        </div>
+
+        <div class="campo">
+          <label for="data">Orgão Emissor</label>
+          <input type="text" name="rg" id="rg" placeholder="Informe aqui">
+        </div>
+
+        <div class="campo">
+          <label for="data">Data de Expedição</label>
+          <input type="date" name="data" id="data" placeholder="dd/mm/aaaa" maxlength="10">
+        </div>
+      </section>
+
+      <section class="linha3">
+        <div class="campo">
+          <label for="data">Data de Nascimento</label>
+          <input type="date" name="data" id="data" placeholder="dd/mm/aaaa" maxlength="10">
+        </div>
+
+        <div class="campo">
+          <label>Gênero</label>
+          <select id="genero">
+            <option selected disabled value="">Selecione</option>
+            <option>Feminino</option>
+            <option>Masculino</option>
+            <option>Não-binário</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="deficiencia">Deficiência</label>
+          <input type="text" name="deficiencia" id="deficiencia" placeholder="Informe sua deficiência">
+        </div>
+      </section>
+
+      <section class="linha4">
+        <div class="campo">
+          <label for="cep">CEP</label>
+          <input type="text" name="cep" id="cep" placeholder="Apenas números" maxlength="8" onblur="autocep()">
+        </div>
+
+        <div class="campo">
+          <label for="endereco" class="required">Endereço</label>
+          <input type="text" name="endereco" id="endereco" placeholder="Avenida, Rua, Travessa..." required>
+        </div>
+      </section>
+
+      <section class="linha5">
+        <div class="campo">
+          <label for="numero" class="required">Número</label>
+          <input type="text" name="numero" id="numero" placeholder="Ex.:00" required>
+        </div>
+
+        <div class="campo">
+          <label for="complemento">Complemento</label>
+          <input type="text" name="complemento" id="complemento" placeholder="Casa, Apto...">
+        </div>
+
+        <div class="campo">
+          <label for="bairro">Bairro</label>
+          <input type="text" name="bairro" id="bairro" placeholder="Informe seu bairro">
+        </div>
+      </section>
+
+      <section class="linha6">
+        <div class="campo">
+          <label for="cidade">Cidade</label>
+          <input type="text" name="cidade" id="cidade" placeholder="Informe sua cidade">
+        </div>
+
+        <div class="campo">
+          <label>Estado</label>
+          <select id="estado">
+            <option selected disabled value="">Selecione</option>
+            <option>AC</option>
+            <option>AL</option>
+            <option>AP</option>
+            <option>AM</option>
+            <option>BA</option>
+            <option>CE</option>
+            <option>DF</option>
+            <option>ES</option>
+            <option>GO</option>
+            <option>MA</option>
+            <option>MG</option>
+            <option>MT</option>
+            <option>MS</option>
+            <option>PA</option>
+            <option>PB</option>
+            <option>PE</option>
+            <option>PI</option>
+            <option>PR</option>
+            <option>RJ</option>
+            <option>RN</option>
+            <option>RO</option>
+            <option>RR</option>
+            <option>RS</option>
+            <option>SC</option>
+            <option>SE</option>
+            <option>SP</option>
+            <option>TO</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="email" class="required">E-mail</label>
+          <input type="email" name="email" id="email" placeholder="ex@email.com" required>
+        </div>
+      </section>
+
+      <section class="linha7">
+        <div class="campo">
+          <label for="fixo">Telefone Fixo</label>
+          <input type="text" name="fixo" id="fixo" placeholder="(00) 0000-0000" maxlength="14"
+            onkeypress="mascaraFixo()">
+        </div>
+
+        <div class="campo">
+          <label for="celular" class="required">Telefone Celular</label>
+          <input type="text" name="celular" id="celular" placeholder="(00) 00000-0000" maxlength="15"
+            onkeypress="mascaraCelular()" required>
+        </div>
+      </section></br>
+
+      <button type="submit" class="botao" onclick="enviar()">Concluir</button>
+
+    </form>
+  </main>
+</body>
+<script src="./script.js"></script>
+
+</html>
